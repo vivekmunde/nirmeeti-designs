@@ -11,74 +11,100 @@
     <meta name="author" content="Nirmeeti Designs" />
     <link rel="canonical" href="https://www.nirmeetidesigns.com" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .animated-path {
+            fill: transparent;
+            stroke: #ffffff;
+            stroke-width: 8;
+            stroke-dasharray: 5000;
+            stroke-dashoffset: 5000;
+            animation: draw 6s ease forwards, fillIn 4s ease forwards;
+            animation-delay: 0.5s, 4s;
+        }
+
+        @keyframes draw {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes fillIn {
+            to {
+                stroke: #ffffff;
+                fill: #ffffff;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 4s ease forwards;
+            animation-delay: 4.5s;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 
-<body>
+<body class="bg-black">
     <main class="min-h-[100vh] flex flex-col">
         <header class="flex-1 flex flex-col justify-center items-center gap-3 bg-black text-white">
             <a href="/" aria-label="Nirmeeti Designs Logo">
                 <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="160.000000pt" height="200.000000pt"
                     viewBox="0 0 200.000000 200.000000" preserveAspectRatio="xMidYMid meet"
-                    class="size-[160px] sm:size-[300px]">
+                    class="size-[280px] sm:size-[300px] md:size-[340px]">
                     <metadata>
                         Nirmeeti Designs
                     </metadata>
-                    <g transform="translate(0.000000,200.000000) scale(0.100000,-0.100000)" fill="#000000"
+                    <g transform="translate(0.000000,200.000000) scale(0.100000,-0.100000)" fill="#ffffff"
                         stroke="none">
                         <!-- <path
                         d="M0 1010 l0 -1010 1000 0 1000 0 0 1010 0 1010 -1000 0 -1000 0 0 -1010z m1473 472 c273 -273 457 -465 457 -476 0 -10 -69 -89 -158 -180 -87 -88 -231 -235 -319 -326 -363 -375 -427 -440 -437 -440 -20 0 -937 925 -934 942 2 9 189 205 415 436 227 231 430 438 450 461 21 22 45 41 53 41 8 0 221 -206 473 -458z" /> -->
-                        <path
-                            d="M789 1658 c-112 -116 -206 -215 -208 -221 -2 -6 12 -8 40 -4 40 5 55 18 208 171 91 91 170 166 176 166 7 0 64 -53 127 -118 145 -148 178 -206 178 -314 0 -89 -11 -129 -50 -192 -32 -50 -33 -79 -3 -91 19 -7 41 17 74 79 64 121 64 262 -1 389 -22 42 -276 311 -316 334 -19 11 -37 -5 -225 -199z"
-                            fill="#ffffff" />
-                        <path
-                            d="M877 1572 c-64 -64 -117 -122 -117 -129 0 -13 42 -25 62 -18 7 3 48 44 92 90 43 47 83 85 88 85 18 0 159 -149 173 -184 23 -55 19 -135 -10 -189 -25 -48 -25 -71 2 -81 21 -8 40 9 65 58 32 61 31 184 -1 246 -24 46 -206 240 -226 240 -5 0 -63 -53 -128 -118z"
-                            fill="#ffffff" />
-                        <path
-                            d="M940 1465 c-45 -46 -53 -58 -44 -73 17 -26 47 -25 74 3 31 33 43 32 75 -7 25 -29 27 -37 21 -90 -6 -48 -4 -59 9 -64 40 -16 74 65 56 133 -12 43 -102 153 -125 153 -6 0 -36 -25 -66 -55z"
-                            fill="#ffffff" />
-                        <path
-                            d="M1433 1383 c5 -31 32 -63 173 -204 141 -143 164 -170 156 -186 -6 -10 -64 -71 -129 -135 -144 -142 -181 -162 -298 -163 -128 0 -161 20 -378 233 -100 99 -192 184 -204 191 -32 17 -115 14 -143 -5 -38 -26 -110 -97 -110 -109 0 -6 27 -37 61 -70 58 -57 61 -59 75 -41 19 27 18 30 -18 72 l-32 36 37 34 c68 63 74 59 292 -156 207 -204 243 -230 363 -252 74 -14 188 9 253 51 42 26 320 300 328 323 5 13 -399 418 -418 418 -10 0 -12 -9 -8 -37z"
-                            fill="#ffffff" />
-                        <path
-                            d="M564 1362 c-27 -10 -66 -27 -85 -39 -48 -31 -319 -305 -319 -323 0 -22 416 -435 424 -421 4 6 4 27 0 46 -5 28 -37 66 -170 198 -90 89 -164 169 -164 178 0 8 55 70 123 137 147 145 197 173 312 174 123 0 152 -18 365 -228 102 -100 199 -189 217 -198 41 -20 86 -20 128 0 33 15 125 105 125 121 0 5 -25 33 -55 63 -46 46 -58 53 -73 44 -26 -17 -26 -39 2 -69 15 -16 26 -36 26 -45 0 -35 -74 -75 -113 -61 -9 4 -99 88 -200 187 -221 219 -265 246 -406 251 -64 3 -99 -1 -137 -15z"
-                            fill="#ffffff" />
-                        <path
-                            d="M617 1250 c-21 -6 -57 -23 -80 -39 -51 -35 -210 -198 -205 -210 7 -21 229 -241 242 -241 17 0 28 38 16 59 -5 9 -45 51 -89 95 -45 43 -81 83 -81 88 0 17 147 154 183 171 44 21 116 22 165 2 23 -10 107 -85 222 -199 215 -212 246 -232 360 -224 36 3 81 13 100 23 36 18 240 212 240 229 0 14 -232 246 -246 246 -12 0 -24 -22 -24 -44 0 -7 38 -52 85 -100 47 -48 85 -94 85 -102 0 -23 -119 -143 -165 -167 -51 -27 -136 -28 -185 -3 -19 10 -113 97 -208 192 -115 116 -189 183 -222 199 -56 28 -137 39 -193 25z"
-                            fill="#ffffff" />
-                        <path
-                            d="M703 898 c-44 -72 -63 -139 -63 -224 0 -139 31 -194 214 -381 82 -84 155 -153 161 -153 21 0 428 421 417 432 -6 6 -24 6 -50 -1 -33 -9 -67 -39 -193 -171 -84 -88 -160 -162 -168 -165 -16 -6 -189 160 -246 237 -44 58 -75 146 -75 212 0 55 31 142 70 196 17 24 21 37 13 49 -21 34 -47 24 -80 -31z"
-                            fill="#ffffff" />
-                        <path
-                            d="M822 857 c-55 -69 -75 -183 -47 -271 15 -48 33 -72 125 -166 58 -60 111 -110 116 -110 16 0 245 242 241 254 -2 6 -17 12 -34 14 -26 3 -40 -7 -104 -73 -41 -42 -75 -80 -77 -86 -2 -5 -12 -9 -22 -9 -20 0 -154 133 -177 176 -24 45 -21 143 5 188 12 20 22 46 22 56 0 25 -34 44 -48 27z"
-                            fill="#ffffff" />
-                        <path
-                            d="M897 745 c-34 -72 -17 -131 63 -214 l52 -54 59 59 c32 32 59 64 59 72 0 7 -10 17 -22 21 -18 7 -29 3 -53 -20 -37 -35 -45 -36 -73 -6 -32 33 -40 65 -28 108 7 28 7 41 -3 53 -21 25 -36 19 -54 -19z"
-                            fill="#ffffff" />
+                        <path class="animated-path"
+                            d="M789 1658 c-112 -116 -206 -215 -208 -221 -2 -6 12 -8 40 -4 40 5 55 18 208 171 91 91 170 166 176 166 7 0 64 -53 127 -118 145 -148 178 -206 178 -314 0 -89 -11 -129 -50 -192 -32 -50 -33 -79 -3 -91 19 -7 41 17 74 79 64 121 64 262 -1 389 -22 42 -276 311 -316 334 -19 11 -37 -5 -225 -199z" />
+                        <path class="animated-path"
+                            d="M877 1572 c-64 -64 -117 -122 -117 -129 0 -13 42 -25 62 -18 7 3 48 44 92 90 43 47 83 85 88 85 18 0 159 -149 173 -184 23 -55 19 -135 -10 -189 -25 -48 -25 -71 2 -81 21 -8 40 9 65 58 32 61 31 184 -1 246 -24 46 -206 240 -226 240 -5 0 -63 -53 -128 -118z" />
+                        <path class="animated-path"
+                            d="M940 1465 c-45 -46 -53 -58 -44 -73 17 -26 47 -25 74 3 31 33 43 32 75 -7 25 -29 27 -37 21 -90 -6 -48 -4 -59 9 -64 40 -16 74 65 56 133 -12 43 -102 153 -125 153 -6 0 -36 -25 -66 -55z" />
+                        <path class="animated-path"
+                            d="M1433 1383 c5 -31 32 -63 173 -204 141 -143 164 -170 156 -186 -6 -10 -64 -71 -129 -135 -144 -142 -181 -162 -298 -163 -128 0 -161 20 -378 233 -100 99 -192 184 -204 191 -32 17 -115 14 -143 -5 -38 -26 -110 -97 -110 -109 0 -6 27 -37 61 -70 58 -57 61 -59 75 -41 19 27 18 30 -18 72 l-32 36 37 34 c68 63 74 59 292 -156 207 -204 243 -230 363 -252 74 -14 188 9 253 51 42 26 320 300 328 323 5 13 -399 418 -418 418 -10 0 -12 -9 -8 -37z" />
+                        <path class="animated-path"
+                            d="M564 1362 c-27 -10 -66 -27 -85 -39 -48 -31 -319 -305 -319 -323 0 -22 416 -435 424 -421 4 6 4 27 0 46 -5 28 -37 66 -170 198 -90 89 -164 169 -164 178 0 8 55 70 123 137 147 145 197 173 312 174 123 0 152 -18 365 -228 102 -100 199 -189 217 -198 41 -20 86 -20 128 0 33 15 125 105 125 121 0 5 -25 33 -55 63 -46 46 -58 53 -73 44 -26 -17 -26 -39 2 -69 15 -16 26 -36 26 -45 0 -35 -74 -75 -113 -61 -9 4 -99 88 -200 187 -221 219 -265 246 -406 251 -64 3 -99 -1 -137 -15z" />
+                        <path class="animated-path"
+                            d="M617 1250 c-21 -6 -57 -23 -80 -39 -51 -35 -210 -198 -205 -210 7 -21 229 -241 242 -241 17 0 28 38 16 59 -5 9 -45 51 -89 95 -45 43 -81 83 -81 88 0 17 147 154 183 171 44 21 116 22 165 2 23 -10 107 -85 222 -199 215 -212 246 -232 360 -224 36 3 81 13 100 23 36 18 240 212 240 229 0 14 -232 246 -246 246 -12 0 -24 -22 -24 -44 0 -7 38 -52 85 -100 47 -48 85 -94 85 -102 0 -23 -119 -143 -165 -167 -51 -27 -136 -28 -185 -3 -19 10 -113 97 -208 192 -115 116 -189 183 -222 199 -56 28 -137 39 -193 25z" />
+                        <path class="animated-path"
+                            d="M703 898 c-44 -72 -63 -139 -63 -224 0 -139 31 -194 214 -381 82 -84 155 -153 161 -153 21 0 428 421 417 432 -6 6 -24 6 -50 -1 -33 -9 -67 -39 -193 -171 -84 -88 -160 -162 -168 -165 -16 -6 -189 160 -246 237 -44 58 -75 146 -75 212 0 55 31 142 70 196 17 24 21 37 13 49 -21 34 -47 24 -80 -31z" />
+                        <path class="animated-path"
+                            d="M822 857 c-55 -69 -75 -183 -47 -271 15 -48 33 -72 125 -166 58 -60 111 -110 116 -110 16 0 245 242 241 254 -2 6 -17 12 -34 14 -26 3 -40 -7 -104 -73 -41 -42 -75 -80 -77 -86 -2 -5 -12 -9 -22 -9 -20 0 -154 133 -177 176 -24 45 -21 143 5 188 12 20 22 46 22 56 0 25 -34 44 -48 27z" />
+                        <path class="animated-path"
+                            d="M897 745 c-34 -72 -17 -131 63 -214 l52 -54 59 59 c32 32 59 64 59 72 0 7 -10 17 -22 21 -18 7 -29 3 -53 -20 -37 -35 -45 -36 -73 -6 -32 33 -40 65 -28 108 7 28 7 41 -3 53 -21 25 -36 19 -54 -19z" />
                     </g>
                 </svg>
             </a>
 
-            <div class="w-full flex flex-col justify-center items-center gap-1">
+            <div class="fade-in w-full flex flex-col justify-center items-center gap-1">
                 <h1
                     class="text-center uppercase text-[32px] sm:text-[60px] lg:text-[80px] font-bold leading-none flex flex-row">
-                    <span class="text-right text-white flex-1 -ml-4">
+                    <span class="text-right text-white w-[50%] pr-2 sm:pr-4">
                         Nirmeeti
                     </span>
-                    <span class="w-[20px] lg:w-[40px]">&nbsp;</span>
-                    <span class="text-left text-yellow-500 flex-1">
+                    <span class="text-left text-yellow-500 w-[50%] pl-2 sm:pl-4">
                         Designs
                     </span>
                 </h1>
 
-                <p class="w-full text-sm lg:text-xl text-center text-white flex flex-row">
-                    <span class="text-right text-white flex-1">Interior Designers</span>
-                    <span class="w-[20px] lg:w-[40px]">&</span>
-                    <span class="text-left flex-1">Consultants</span>
+                <p class="w-full text-sm lg:text-xl text-center text-white flex flex-row items-center">
+                    <span class="text-right text-white w-[50%] pr-2">Interior Designers</span>
+                    <span>&</span>
+                    <span class="text-left w-[50%] pl-2">Consultants</span>
                 </p>
             </div>
         </header>
 
-        <section aria-labelledby="about-us" class="bg-white text-black">
+        <section aria-labelledby="about-us" class="fade-in bg-white text-black">
             <h2 id="about-us" class="sr-only">About Nirmeeti Designs</h2>
 
             <div class="flex flex-row bg-black">
@@ -88,8 +114,8 @@
 
             <div class="flex flex-col md:flex-row gap-4 justify-center items-center py-8">
                 <div class="text-center md:text-right uppercase text-lg md:text-2xl md:flex-1">
-                    <p><strong>Sunil S.</strong> Kadam</p>
-                    <p><strong>Gayatri S.</strong> Kadam</p>
+                    <p><strong class="font-bold">Sunil</strong> S. Kadam</p>
+                    <p><strong class="font-bold">Gayatri</strong> S. Kadam</p>
                     <p class="mt-5 md:text-lg">Directors</p>
                 </div>
 
@@ -149,7 +175,7 @@
             </div>
         </section>
 
-        <footer class="text-center text-sm py-4 bg-black text-white">
+        <footer class="fade-in text-center text-sm py-4 bg-black text-white">
             &copy; <span id="year"></span> Nirmeeti Designs. All rights reserved.
         </footer>
     </main>
