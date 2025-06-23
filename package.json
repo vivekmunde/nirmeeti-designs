@@ -1,4 +1,7 @@
 {
   "name": "nirmeeti-designs",
-  "packageManager": "yarn@4.6.0"
+  "packageManager": "yarn@4.6.0",
+  "scripts": {
+    "start": "npx serve@latest -l 8000"
+  }
 }
